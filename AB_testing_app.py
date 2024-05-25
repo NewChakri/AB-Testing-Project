@@ -48,5 +48,6 @@ if uploaded_file is not None:
             'selector': 'th',
             'props': [('text-align', 'center')]
         }])
+        st.table(styled_result)
 else:
     st.write("Please upload a CSV file to proceed with the A/B test analysis.")
