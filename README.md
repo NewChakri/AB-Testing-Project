@@ -1,9 +1,11 @@
 # AB Testing Project
+
+The AB Testing Project is a Python-based tool developed to automate the statistical analysis of two groups, enabling the determination of significant differences in metrics. The project boasts a user-friendly Streamlit interface that facilitates easy interaction and visualization of results. It implements statistical tests like the Independent Samples t Test and Mann-Whitney U Test, making it adaptable to various data distributions and variance conditions.
+
 Web app : https://newchakri-ab-testing.streamlit.app
 
 ![image](https://github.com/NewChakri/AB_Testing_Project/assets/99199609/8a306b7c-ebba-4458-8a94-05d2cf597d32)
 
-The AB Testing Project is a Python-based tool developed to automate the statistical analysis of two groups, enabling the determination of significant differences in metrics. The project boasts a user-friendly Streamlit interface that facilitates easy interaction and visualization of results. It implements statistical tests like the Independent Samples t Test and Mann-Whitney U Test, making it adaptable to various data distributions and variance conditions.
 
 # What is A/B Testing?
 A/B Testing is a method used to compare two groups, like Group A and Group B, to see if there's a significant difference in a metric, such as user engagement or sales. We use statistical tests to determine this difference.
