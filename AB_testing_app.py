@@ -22,6 +22,11 @@ if uploaded_file is not None:
     # Run A/B test when the button is clicked
     if st.button("Run A/B Test"):
         result = AB_Test(dataframe=df, group=group, target=target)
-        st.write(result)
+        # Display the test result in a clear format
+        st.subheader("A/B Test Result")
+        st.write(f"Test Type: {result['Test Type'].values[0]}")
+        st.write(f"Homogeneity: {result['Homogeneity'].values[0]}")
+        st.write(f"AB Hypothesis: {result['AB Hypothesis'].values[0]}")
+        st.write(f"p-value: {result['p-value'].values[0]}")
 else:
     st.write("Please upload a CSV file to proceed.")
