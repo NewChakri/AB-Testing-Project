@@ -42,11 +42,11 @@ if uploaded_file is not None:
             st.warning("The test does not indicate a statistically significant difference between the A and B groups.")
 
         # Display the full result in a styled table
-        st.table(result.style.set_properties(**{
-            'text-align': 'center',
-            'border': '1px solid black',
-            'background-color': '#F3F7F0',
-            'color': '#000000'
-        }))
+        styled_result = result.style.set_properties(**{
+            'text-align': 'center'
+        }).set_table_styles([{
+            'selector': 'th',
+            'props': [('text-align', 'center')]
+        }])
 else:
     st.write("Please upload a CSV file to proceed with the A/B test analysis.")
