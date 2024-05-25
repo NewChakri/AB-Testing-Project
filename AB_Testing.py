@@ -70,7 +70,7 @@ def AB_Test(dataframe, group, target):
 
     # Determine the result of the hypothesis test
     result = "Statistically Significant" if p_value < 0.05 else "Not Statistically Significant"
-    comment = "There is a significant difference between the A/B groups." if result == "Statistically Significant" else "There is no significant difference between the A/B groups."
+    summary = "There is a significant difference between the A/B groups." if result == "Statistically Significant" else "There is no significant difference between the A/B groups."
 
     # Compile the results into a DataFrame
     result_df = pd.DataFrame({
@@ -78,7 +78,7 @@ def AB_Test(dataframe, group, target):
         "Homogeneity": [homogeneity],
         "AB Hypothesis": [result],
         "p-value": [p_value],
-        "Comment": [comment]
+        "Summary": [summary]
     })
 
     # Return the result DataFrame
