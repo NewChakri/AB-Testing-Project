@@ -3,7 +3,7 @@ import pandas as pd
 from AB_Testing import AB_Test
 
 # Set app-wide theme to align button text to the left
-st.set_page_config(page_title="A/B Testing App", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="A/B Testing App")
 
 # Title of the app
 st.title("A/B Testing App")
@@ -23,7 +23,7 @@ if uploaded_file is not None:
     target = st.sidebar.selectbox("Select Target Column", df.columns)
 
     # Run A/B test when the button is clicked
-    if st.button("Run A/B Test", key="run_ab_test", help="Run the A/B test and display the results"):
+    if st.sidebar.button("Run A/B Test", key="run_ab_test", help="Run the A/B test and display the results"):
         result = AB_Test(dataframe=df, group=group, target=target)
         # Display the test result in a clear format
         st.subheader("A/B Test Result")
