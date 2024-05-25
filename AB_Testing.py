@@ -13,12 +13,38 @@ def AB_Test(dataframe, group, target):
     target (str): Column name indicating the target metric
 
     Returns:
-    pd.DataFrame: DataFrame containing the test results
+    pd.DataFrame: DataFrame containing the test results or an error message
     """
 
-    # Ensure the group and target columns are in the dataframe
+    # Check if the group and target columns exist in the dataframe
     if group not in dataframe.columns or target not in dataframe.columns:
-        raise ValueError("Specified group or target column not found in the dataframe")
+        return pd.DataFrame({
+            "Test Type": ["N/A"],
+            "Homogeneity": ["N/A"],
+            "AB Hypothesis": ["N/A"],
+            "p-value": ["N/A"],
+            "Summary": ["Specified group or target column not found in the dataframe"]
+        })
+
+    # Check if the group column is of the correct type (should be string)
+    if not pd.api.types.is_string_dtype(dataframe[group]):
+        return pd.DataFrame({
+            "Test Type": ["N/A"],
+            "Homogeneity": ["N/A"],
+            "AB Hypothesis": ["N/A"],
+            "p-value": ["N/A"],
+            "Summary": ["Group column should be of string type (A/B)"]
+        })
+
+    # Check if the target column is of the correct type (should be numeric)
+    if not pd.api.types.is_numeric_dtype(dataframe[target]):
+        return pd.DataFrame({
+            "Test Type": ["N/A"],
+            "Homogeneity": ["N/A"],
+            "AB Hypothesis": ["N/A"],
+            "p-value": ["N/A"],
+            "Summary": ["Target column should be of numeric type"]
+        })
 
     # Split data into two groups: A and B
     groupA = dataframe[dataframe[group] == "A"][target]
@@ -26,7 +52,13 @@ def AB_Test(dataframe, group, target):
 
     # Check if the groups have sufficient data
     if len(groupA) < 30 or len(groupB) < 30:
-        raise ValueError("Each group must contain at least 30 samples for the statistical tests to be valid")
+        return pd.DataFrame({
+            "Test Type": ["N/A"],
+            "Homogeneity": ["N/A"],
+            "AB Hypothesis": ["N/A"],
+            "p-value": ["N/A"],
+            "Summary": ["Each group must contain at least 30 samples for the statistical tests to be valid"]
+        })
 
     # Assumption: Normality
     normA = shapiro(groupA)[1] >= 0.05
