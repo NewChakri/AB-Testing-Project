@@ -2,6 +2,20 @@
 
 Developed a Python-based A/B Testing tool that automates the statistical analysis of two groups to determine significant differences in metrics. The project includes a user-friendly Streamlit interface for easy interaction and visualization of results. Implemented statistical tests such as Independent Samples t Test and Mann-Whitney U Test to accommodate different data distributions and variance conditions.
 
+# A/B Testing App
+
+## Introduction
+
+This Streamlit app allows users to perform A/B testing on their own data. Users can upload a CSV file, select the group and target columns, and run the A/B test to see the results.
+
+## Features
+
+- Upload CSV files directly through the app.
+- Select the columns representing the groups (A/B) and the target metric.
+- Automatically performs normality tests and chooses the appropriate statistical test (Independent Samples t Test or Mann-Whitney U Test).
+- Displays the results of the A/B test, including p-values and test type.
+
+
 # A/B Testing Simplified
 This project introduces a user-friendly function for conducting A/B Testing and interpreting the results of statistical hypothesis tests commonly used in A/B Testing.
 
