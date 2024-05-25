@@ -1,5 +1,5 @@
 # AB_Testing_Project
-
+https://newchakri-ab-testing.streamlit.app
 ![image](https://github.com/NewChakri/AB_Testing_Project/assets/99199609/8a306b7c-ebba-4458-8a94-05d2cf597d32)
 
 Developed a Python-based A/B Testing tool that automates the statistical analysis of two groups to determine significant differences in metrics. The project includes a user-friendly Streamlit interface for easy interaction and visualization of results. Implemented statistical tests such as Independent Samples t Test and Mann-Whitney U Test to accommodate different data distributions and variance conditions.
