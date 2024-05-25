@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from AB_Testing import AB_Test
 
-# Set app-wide theme to align button text to the left
+# Set app-wide theme
 st.set_page_config(page_title="A/B Testing App")
 
 # Title of the app
@@ -35,7 +35,27 @@ if uploaded_file is not None:
         else:
             st.warning("There is no significant difference between the A/B groups.")
 
-        # Display the full result in a table
-        st.table(result)
+        # Display the full result in a table with centered text
+        result_html = result.to_html(index=False)
+
+        st.markdown(
+            f"""
+            <style>
+            .dataframe {{
+                text-align: center;
+                width: 100%;
+                margin: auto;
+            }}
+            .dataframe th {{
+                text-align: center;
+            }}
+            .dataframe td {{
+                text-align: center;
+            }}
+            </style>
+            {result_html}
+            """,
+            unsafe_allow_html=True
+        )
 else:
     st.write("Please upload a CSV file to proceed.")
