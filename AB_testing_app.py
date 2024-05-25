@@ -42,6 +42,6 @@ if uploaded_file is not None:
             st.warning("The test does not indicate a statistically significant difference between the A and B groups.")
 
         # Display the full result in a styled table
-        st.table(styled_result)
+        st.table(result)
 else:
     st.write("Please upload a CSV file to proceed with the A/B test analysis.")
