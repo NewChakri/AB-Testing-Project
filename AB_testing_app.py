@@ -27,7 +27,7 @@ if uploaded_file is not None:
         result = AB_Test(dataframe=df, group=group, target=target)
 
         # Display the test result in a clear format
-        st.subheader("A/B Test Analysis Results")
+        st.subheader("A/B Testing Analysis Results")
 
         # Use success or warning message based on the result
         if result['AB Hypothesis'].values[0] == "Statistically Significant":
