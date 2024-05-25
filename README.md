@@ -30,8 +30,6 @@ If p-value ≥ 0.05: We fail to reject the null hypothesis, suggesting no signif
 
 ## A/B Testing Application
 
-## Introduction
-
 This Streamlit app allows users to perform A/B testing on their own data. Users can upload a CSV file, select the group and target columns, and run the A/B test to see the results.
 
 ## Features
@@ -40,6 +38,12 @@ This Streamlit app allows users to perform A/B testing on their own data. Users 
 - Select the columns representing the groups (A/B) and the target metric.
 - Automatically performs normality tests and chooses the appropriate statistical test (Independent Samples t Test or Mann-Whitney U Test).
 - Displays the results of the A/B test, including p-values and test type.
+
+## How to Use
+
+Upload Data: Begin by uploading your CSV file containing the necessary columns.
+Select Columns: Choose the group (A/B) and target metric columns from the uploaded data.
+Run A/B Test: Click the button to run the A/B test and view the results.
 
 
 ## Example Scenario: Website Feature Engagement
