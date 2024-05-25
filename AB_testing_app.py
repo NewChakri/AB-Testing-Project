@@ -25,12 +25,25 @@ if uploaded_file is not None:
     # Run A/B test when the button is clicked
     if st.sidebar.button("Run A/B Test", key="run_ab_test", help="Run the A/B test and display the results"):
         result = AB_Test(dataframe=df, group=group, target=target)
+
         # Display the test result in a clear format
         st.subheader("A/B Test Result")
-        st.write(f"Test Type: {result['Test Type'].values[0]}")
-        st.write(f"Homogeneity: {result['Homogeneity'].values[0]}")
-        st.write(f"AB Hypothesis: {result['AB Hypothesis'].values[0]}")
-        st.write(f"p-value: {result['p-value'].values[0]}")
-        st.write(f"Summary: {result['Summary'].values[0]}")
+
+        # Use st.metric for key metrics
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Test Type", result['Test Type'].values[0])
+        col2.metric("Homogeneity", result['Homogeneity'].values[0])
+        col3.metric("AB Hypothesis", result['AB Hypothesis'].values[0])
+
+        st.metric("p-value", f"{result['p-value'].values[0]:.2e}")
+
+        # Use success or warning message based on the result
+        if result['AB Hypothesis'].values[0] == "Statistically Significant":
+            st.success("There is a significant difference between the A/B groups.")
+        else:
+            st.warning("There is no significant difference between the A/B groups.")
+
+        # Display the full result in a table
+        st.table(result)
 else:
     st.write("Please upload a CSV file to proceed.")
