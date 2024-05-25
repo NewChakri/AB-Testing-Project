@@ -28,5 +28,6 @@ if uploaded_file is not None:
         st.write(f"Homogeneity: {result['Homogeneity'].values[0]}")
         st.write(f"AB Hypothesis: {result['AB Hypothesis'].values[0]}")
         st.write(f"p-value: {result['p-value'].values[0]}")
+        st.write(f"Summary: {result['summary'].values[0]}")
 else:
     st.write("Please upload a CSV file to proceed.")
