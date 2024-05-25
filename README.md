@@ -1,4 +1,4 @@
-# AB_Testing_Project
+# AB Testing Project
 Web app : https://newchakri-ab-testing.streamlit.app
 
 ![image](https://github.com/NewChakri/AB_Testing_Project/assets/99199609/8a306b7c-ebba-4458-8a94-05d2cf597d32)
