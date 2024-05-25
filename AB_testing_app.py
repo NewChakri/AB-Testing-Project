@@ -33,7 +33,7 @@ if uploaded_file is not None:
         result = AB_Test(dataframe=df, group=group, target=target)
 
         # Display the test result in a clear format
-        st.subheader("A/B Test Results")
+        st.subheader("A/B Testing Results")
 
         # Use success or warning message based on the result
         if result['AB Hypothesis'].values[0] == "Statistically Significant":
@@ -42,12 +42,6 @@ if uploaded_file is not None:
             st.warning("The test does not indicate a statistically significant difference between the A and B groups.")
 
         # Display the full result in a styled table
-        styled_result = result.style.set_properties(**{
-            'text-align': 'center'
-        }).set_table_styles([{
-            'selector': 'th',
-            'props': [('text-align', 'center')]
-        }])
         st.table(styled_result)
 else:
     st.write("Please upload a CSV file to proceed with the A/B test analysis.")
