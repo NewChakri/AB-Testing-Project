@@ -29,14 +29,6 @@ if uploaded_file is not None:
         # Display the test result in a clear format
         st.subheader("A/B Test Result")
 
-        # Use st.metric for key metrics
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Test Type", result['Test Type'].values[0])
-        col2.metric("Homogeneity", result['Homogeneity'].values[0])
-        col3.metric("AB Hypothesis", result['AB Hypothesis'].values[0])
-
-        st.metric("p-value", f"{result['p-value'].values[0]:.2e}")
-
         # Use success or warning message based on the result
         if result['AB Hypothesis'].values[0] == "Statistically Significant":
             st.success("There is a significant difference between the A/B groups.")
