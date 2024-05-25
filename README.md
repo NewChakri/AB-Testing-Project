@@ -1,25 +1,14 @@
 # AB_Testing_Project
-https://newchakri-ab-testing.streamlit.app
+Web app : https://newchakri-ab-testing.streamlit.app
 ![image](https://github.com/NewChakri/AB_Testing_Project/assets/99199609/8a306b7c-ebba-4458-8a94-05d2cf597d32)
 
-Developed a Python-based A/B Testing tool that automates the statistical analysis of two groups to determine significant differences in metrics. The project includes a user-friendly Streamlit interface for easy interaction and visualization of results. Implemented statistical tests such as Independent Samples t Test and Mann-Whitney U Test to accommodate different data distributions and variance conditions.
+The AB Testing Project is a Python-based tool developed to automate the statistical analysis of two groups, enabling the determination of significant differences in metrics. The project boasts a user-friendly Streamlit interface that facilitates easy interaction and visualization of results. It implements statistical tests like the Independent Samples t Test and Mann-Whitney U Test, making it adaptable to various data distributions and variance conditions.
 
 # A/B Testing App
 
 ## Introduction
 
 This Streamlit app allows users to perform A/B testing on their own data. Users can upload a CSV file, select the group and target columns, and run the A/B test to see the results.
-
-## Features
-
-- Upload CSV files directly through the app.
-- Select the columns representing the groups (A/B) and the target metric.
-- Automatically performs normality tests and chooses the appropriate statistical test (Independent Samples t Test or Mann-Whitney U Test).
-- Displays the results of the A/B test, including p-values and test type.
-
-
-# A/B Testing Simplified
-This project introduces a user-friendly function for conducting A/B Testing and interpreting the results of statistical hypothesis tests commonly used in A/B Testing.
 
 # What is A/B Testing?
 A/B Testing is a method used to compare two groups, like Group A and Group B, to see if there's a significant difference in a metric, such as user engagement or sales. We use statistical tests to determine this difference.
@@ -44,6 +33,13 @@ Mann-Whitney U Test: This test checks if there's a significant difference in the
 If p-value < 0.05: We reject the null hypothesis, indicating a significant difference.
 If p-value ≥ 0.05: We fail to reject the null hypothesis, suggesting no significant difference.
 
+
+## Features
+
+- Upload CSV files directly through the app.
+- Select the columns representing the groups (A/B) and the target metric.
+- Automatically performs normality tests and chooses the appropriate statistical test (Independent Samples t Test or Mann-Whitney U Test).
+- Displays the results of the A/B test, including p-values and test type.
 
 
 ## Example Scenario: Website Feature Engagement
