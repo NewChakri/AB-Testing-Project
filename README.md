@@ -27,3 +27,16 @@ Mann-Whitney U Test: This test checks if there's a significant difference in the
 
 If p-value < 0.05: We reject the null hypothesis, indicating a significant difference.
 If p-value ≥ 0.05: We fail to reject the null hypothesis, suggesting no significant difference.
+
+
+
+## Example Scenario: Website Feature Engagement
+
+**Scenario:** A company has launched a new feature on their website and wants to determine if it significantly increases user engagement. Group A represents users who have not been exposed to the new feature, while Group B represents users who have been exposed to the new feature. The target metric is `engagement_score`, which measures user engagement on a scale from 0 to 100.
+
+### Input Data
+
+The input data should be in CSV format with at least two columns:
+- `group`: Indicates the user group (e.g., "A" or "B").
+- `engagement_score`: The engagement score of the user, ranging from 0 to 100.
+
